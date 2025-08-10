@@ -20,12 +20,12 @@ const Estadisticas = () => {
         setLoading(true)
         
         // Fetch temas count
-        const temasResponse = await fetch('http://GreatFiend.pythonanywhere.com/estadisticas/temas')
+        const temasResponse = await fetch('https://GreatFiend.pythonanywhere.com/estadisticas/temas')
         if (!temasResponse.ok) throw new Error('Error al obtener temas')
         const temasData = await temasResponse.json()
         
         // Fetch examenes count
-        const examenesResponse = await fetch('http://GreatFiend.pythonanywhere.com/estadisticas/examenes')
+        const examenesResponse = await fetch('https://GreatFiend.pythonanywhere.com/estadisticas/examenes')
         if (!examenesResponse.ok) throw new Error('Error al obtener exámenes')
         const examenesData = await examenesResponse.json()
         

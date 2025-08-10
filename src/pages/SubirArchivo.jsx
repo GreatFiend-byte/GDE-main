@@ -63,7 +63,7 @@ const SubirArchivo = () => {
       formData.append("nombre", nombre)
       formData.append("descripcion", descripcion)
 
-      const response = await fetch("http://GreatFiend.pythonanywhere.com/subir-archivo/", {
+      const response = await fetch("https://GreatFiend.pythonanywhere.com/subir-archivo/", {
         method: "POST",
         body: formData,
         headers: {

@@ -59,7 +59,7 @@ const ResuelveExamen = () => {
   useEffect(() => {
     const cargarTemas = async () => {
       try {
-        const response = await fetch('http://GreatFiend.pythonanywhere.com/obtener-temas');
+        const response = await fetch('https://GreatFiend.pythonanywhere.com/obtener-temas');
         if (!response.ok) throw new Error('Error al cargar temas');
         const data = await response.json();
         setTemas(data);
@@ -79,7 +79,7 @@ const ResuelveExamen = () => {
       setError(null);
 
       try {
-        const response = await fetch('http://GreatFiend.pythonanywhere.com/estadisticas/examenes-detallados');
+        const response = await fetch('https://GreatFiend.pythonanywhere.com/estadisticas/examenes-detallados');
         if (!response.ok) throw new Error('Error al cargar exámenes');
 
         const data = await response.json();
@@ -108,7 +108,7 @@ const ResuelveExamen = () => {
 
       try {
         // Cargar preguntas del examen
-        const preguntasResponse = await fetch(`http://GreatFiend.pythonanywhere.com/descargar-examen/${selectedExamen}`);
+        const preguntasResponse = await fetch(`https://GreatFiend.pythonanywhere.com/descargar-examen/${selectedExamen}`);
         if (!preguntasResponse.ok) throw new Error('Error al cargar preguntas');
         const preguntasData = await preguntasResponse.json();
 
@@ -120,7 +120,7 @@ const ResuelveExamen = () => {
 
         // Cargar respuestas existentes (con manejo de errores)
         try {
-          const respuestasResponse = await fetch(`http://GreatFiend.pythonanywhere.com/obtener-respuestas/${selectedExamen}`);
+          const respuestasResponse = await fetch(`https://GreatFiend.pythonanywhere.com/obtener-respuestas/${selectedExamen}`);
           if (respuestasResponse.ok) {
             const respuestasData = await respuestasResponse.json();
 
@@ -196,7 +196,7 @@ const ResuelveExamen = () => {
         es_correcta: 1
       }));
 
-      const response = await fetch('http://GreatFiend.pythonanywhere.com/guardar-respuestas', {
+      const response = await fetch('https://GreatFiend.pythonanywhere.com/guardar-respuestas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
