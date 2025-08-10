@@ -20,7 +20,7 @@ const GenerarExamen = () => {
   useEffect(() => {
     const cargarTemas = async () => {
       try {
-        const response = await fetch('http://localhost:8000/obtener-temas')
+        const response = await fetch('http://GreatFiend.pythonanywhere.com/obtener-temas')
         if (!response.ok) throw new Error('Error al cargar temas')
         const data = await response.json()
         setTemas(data)
@@ -46,7 +46,7 @@ const GenerarExamen = () => {
     setGeneratedExams({ Examenes: [] })
 
     try {
-      const response = await fetch('http://localhost:8000/generar-preguntas', {
+      const response = await fetch('http://GreatFiend.pythonanywhere.com/generar-preguntas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

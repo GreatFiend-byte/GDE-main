@@ -16,7 +16,7 @@ const Historial = () => {
   // Obtener temas desde el backend
   const fetchTemas = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/obtener-temas", {
+      const response = await fetch("http://GreatFiend.pythonanywhere.com/obtener-temas", {
         method: "GET",
         headers: {
           'Accept': 'application/json',
@@ -51,7 +51,7 @@ const Historial = () => {
   // Ver detalles del tema
   const handleVerDetalles = async (idTema) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/obtener-texto-tema/${idTema}`, {
+      const response = await fetch(`http://GreatFiend.pythonanywhere.com/obtener-texto-tema/${idTema}`, {
         method: "GET",
         headers: {
           'Accept': 'application/json',
@@ -75,7 +75,7 @@ const Historial = () => {
   // Descargar archivo
   const handleDescargar = async (tema) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/descargar-archivo/${tema.id_tema}`, {
+      const response = await fetch(`http://GreatFiend.pythonanywhere.com/descargar-archivo/${tema.id_tema}`, {
         method: "GET",
         credentials: 'omit'
       })
@@ -103,11 +103,12 @@ const Historial = () => {
     setTemaToDelete(idTema)
     setShowConfirmModal(true)
   }
+  
 
   // Confirmar eliminación de tema
   const confirmEliminar = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/eliminar-tema/${temaToDelete}`, {
+      const response = await fetch(`http://GreatFiend.pythonanywhere.com/eliminar-tema/${temaToDelete}`, {
         method: "DELETE",
         headers: {
           'Accept': 'application/json',
