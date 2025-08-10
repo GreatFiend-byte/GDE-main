@@ -55,7 +55,7 @@ const ReportTabs = ({ period }) => {
     const fetchExamsData = async () => {
       try {
         setLoading(true)
-        const response = await fetch('http://localhost:8000/estadisticas/examenes-detallados')
+        const response = await fetch('https://GreatFiend.pythonanywhere.com/estadisticas/examenes-detallados')
         if (!response.ok) throw new Error('Error al obtener exámenes')
         const data = await response.json()
         
@@ -100,7 +100,7 @@ const ReportTabs = ({ period }) => {
 
   const handleDownload = async (id_examen, resuelto) => {
     try {
-      const response = await fetch(`http://localhost:8000/descargar-examen-pdf/${id_examen}/${resuelto}`)
+      const response = await fetch(`https://GreatFiend.pythonanywhere.com/descargar-examen-pdf/${id_examen}/${resuelto}`)
       if (!response.ok) throw new Error('Error al descargar examen')
       
       const blob = await response.blob()
